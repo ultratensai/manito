@@ -1,0 +1,33 @@
+<title>manito</title>
+<body>
+
+    <img src="ned.jpg">
+    
+<form method="post">
+    <p>
+    {{ form.number.label }}<br>
+    {{ form.number(size=10, maxlength=10) }}<br>
+    {% for error in form.number.errors %}
+    <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}
+    </p>
+    <p>
+    {{ form.text.label }}<br>
+    {{ form.text(cols="29", rows="3", maxlength=70) }}<br>
+    {% for error in form.text.errors %}
+    <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}
+    </p>
+    <p>{{ form.submit() }}</p>
+</form>
+
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+
+{% for message in messages %}
+{{ message }}
+{% endfor %}
+
+{% endif %}
+{% endwith %}
