@@ -18,5 +18,4 @@ def send_msg(number, sms_text):
 target = ['+61403646240']
 
 for t in target:
-    send_msg(t, 'This is pretty good  ❤️')
-    #send_msg(t, '오늘 엄청 더운데 더위 조심하세요!!')
+    send_msg(t, 'Have a wonderful day ❤️!')
