@@ -43,13 +43,13 @@ class ReusableForm(Form):
     text = StringField('Text:', validators=[validators.DataRequired(), validators.length(max=70), swear_jar], widget=TextArea())
     submit = SubmitField('보내기')
 
-@app.route("/ned.jpg")
+@app.route("/manito/ned.jpg")
 def ned():
     ned = 'ned.jpg'
     return send_file(ned, mimetype='image/jpg')
 
 
-@app.route("/", methods=['GET', 'POST'])
+@app.route("/manito", methods=['GET', 'POST'])
 def hello():
     form = ReusableForm(request.form)
     
